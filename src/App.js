@@ -12,6 +12,10 @@ class App extends Component {
     selectedVideo: null,
   }
 
+  onVideolSelect = (video) => {
+    this.setState({ selectedVideo: video })
+  }
+
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get('search', { 
       params: {
@@ -21,8 +25,6 @@ class App extends Component {
         q: searchTerm,
       }
     });
-
-    console.log('this is response', response.data.items);
 
     this.setState( 
       { 
@@ -46,7 +48,7 @@ class App extends Component {
               <VideoDetails video={selectedVideo} />
             </Grid>
             <Grid item xs={4}>
-              <VideoList videos={videos} />
+              <VideoList videos={videos} onVideolSelect={this.onVideolSelect} />
             </Grid>
           </Grid>
         </Grid>
