@@ -12,6 +12,10 @@ class App extends Component {
     selectedVideo: null,
   }
 
+  componentDidMount() {
+    this.handleSubmit('react js')
+  }
+
   onVideolSelect = (video) => {
     this.setState({ selectedVideo: video })
   }
@@ -56,6 +60,5 @@ class App extends Component {
     )
   }
 }
-
 
 export default App;
