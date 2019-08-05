@@ -4,9 +4,9 @@ import { Paper, Typography } from '@material-ui/core';
 
 const VideoDetails = ({ video }) => {
   if(!video) return <div>Loading...</div>;
-  console.log('this is video', video)
+
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
-  console.log('this is vid src', videoSrc);
+
   return (
     <React.Fragment>
       <Paper elevation={6} style={{ height: '70%' }}>
